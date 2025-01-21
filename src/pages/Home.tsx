@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import{ useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getRecipes } from "../lib/api";
 import { Recipe } from "../interfaces/RecipeInterface";
