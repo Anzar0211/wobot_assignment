@@ -8,7 +8,7 @@ export async function getRecipes() {
     }
     const data = await res.json()
     return data.recipes
-    }
+}
 
     export async function getRecipeDetails(id: string) {
     const res = await fetch(`${BASE_URL}/${id}/information?apiKey=${API_KEY}`)
@@ -16,7 +16,7 @@ export async function getRecipes() {
         throw new Error("Failed to fetch recipe details")
     }
     return res.json()
-    }
+}
 
     export async function searchRecipes(query: string) {
     const res = await fetch(

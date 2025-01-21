@@ -1,29 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getRecipeDetails } from "../lib/api";
+import { Recipe } from "../interfaces/RecipeInterface";
 
-interface Step {
-  number: number;
-  step: string;
-}
 
-interface Instruction {
-  steps: Step[];
-}
-
-interface Ingredient {
-  id: number;
-  original: string;
-}
-
-interface Recipe {
-  id: string;
-  image: string;
-  title: string;
-  summary: string;
-  extendedIngredients: Ingredient[];
-  analyzedInstructions: Instruction[];
-}
 
 function RecipeDetails() {
   const { id } = useParams<{ id: string }>();
@@ -44,6 +24,7 @@ function RecipeDetails() {
         setLoading(false);
       } catch (err) {
         setError("Failed to fetch recipe details. Please try again later.");
+        console.log(err);
         setLoading(false);
       }
     };

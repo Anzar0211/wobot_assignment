@@ -18,6 +18,7 @@ function Home() {
         setLoading(false);
       } catch (err) {
         setError("Failed to fetch recipes. Please try again later.");
+        console.log(err);
         setLoading(false);
       }
     };
